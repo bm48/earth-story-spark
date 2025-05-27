@@ -22,11 +22,10 @@ const HeroSection = () => {
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute w-2 h-2 bg-emerald-300 rounded-full opacity-60 animate-pulse"
+            className="absolute w-2 h-2 bg-emerald-300 rounded-full opacity-60"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
-              animationDelay: `${particle.delay}s`,
               animation: `pulse 3s ease-in-out infinite ${particle.delay}s, float 6s ease-in-out infinite ${particle.delay}s`,
             }}
           />
@@ -72,12 +71,14 @@ const HeroSection = () => {
         </Button>
       </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+          }
+        `
+      }} />
     </section>
   );
 };
