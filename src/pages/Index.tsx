@@ -7,6 +7,7 @@ import ImpactVisualization from '../components/ImpactVisualization';
 import ProgressTimeline from '../components/ProgressTimeline';
 import ActionZone from '../components/ActionZone';
 import EmissionsCalculator from '../components/EmissionsCalculator';
+import HistoricalChart from '../components/HistoricalChart';
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <SustainabilityCheckup />
       <EcoChronicleTimeline />
+      <HistoricalChart />
       <ImpactVisualization />
       <ProgressTimeline />
       <ActionZone />
