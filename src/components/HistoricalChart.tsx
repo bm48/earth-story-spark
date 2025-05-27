@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Area, AreaChart, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Area, AreaChart, BarChart, Bar } from 'recharts';
 import { TrendingDown, TrendingUp, Target, Calendar } from 'lucide-react';
 
 interface HistoricalDataPoint {
@@ -133,6 +133,8 @@ const HistoricalChart = () => {
   const renderChart = () => {
     const commonProps = {
       data: historicalData,
+      width: 800,
+      height: 400,
       margin: { top: 20, right: 30, left: 20, bottom: 5 }
     };
 
@@ -310,12 +312,10 @@ const HistoricalChart = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <ChartContainer config={chartConfig} className="h-[400px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <div key={animationKey}>
-                  {renderChart()}
-                </div>
-              </ResponsiveContainer>
+            <ChartContainer config={chartConfig} className="w-full">
+              <div key={animationKey} className="w-full flex justify-center">
+                {renderChart()}
+              </div>
             </ChartContainer>
 
             {/* Legend */}
